@@ -33,7 +33,6 @@ var CommentBox = React.createClass({
         console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
-
   },
 
   getInitialState: function() {
@@ -53,9 +52,7 @@ var CommentBox = React.createClass({
         <CommentList data={ this.state.data } />
         <CommentForm onCommentSubmit={this.handleCommentSubmit} />
       </div>
-
     )
-
   }
 
 });
@@ -64,15 +61,12 @@ var CommentBox = React.createClass({
 var CommentList = React.createClass({
 
   render: function() {
-
     var commentNodes = this.props.data.map(function(comment) {
-
       return (
         <Comment author={ comment.author } key={ comment.id } >
           { comment.text }
         </Comment>
       );
-
     });
 
     return (
@@ -80,7 +74,6 @@ var CommentList = React.createClass({
         { commentNodes }
       </div>
     )
-
   }
 
 });
@@ -94,18 +87,14 @@ var Comment = React.createClass({
   },
 
   render: function() {
-
     return (
-
       <div className='Comment'>
         <h2 className='CommentAuthor'>
           { this.props.author }
         </h2>
         <span dangerouslySetInnerHTML={ this.rawMarkup() } />
       </div>
-
     )
-
   }
 
 });
@@ -137,9 +126,7 @@ var CommentForm = React.createClass({
   },
 
   render: function() {
-
     return (
-
       <form className='commentForm' onSubmit={this.handleSubmit}>
         <input
           type="text"
@@ -155,9 +142,7 @@ var CommentForm = React.createClass({
         />
         <input type="submit" value="Post" />
       </form>
-
     )
-
   }
 
 });
